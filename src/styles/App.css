@@ -1,1 +1,13 @@
 
+.model-overlay button{
+    background-color: #C55252;
+    border-radius: 5px;
+    outline: none;
+    border:none;
+    color:white;
+    margin:1em;
+}
+
+.model-close{
+    margin-inline: 1em;
+}
