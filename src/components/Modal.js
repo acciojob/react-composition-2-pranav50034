@@ -1,29 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
+import "./../styles/App.css";
 
-const Modal = ()=> {
+function Modal({ show, onClose, children }) {
+   if (!show) {
+      return null;
+   }
 
-    let [showProp, setShowProp] = useState(false)
-
-    function updateState(change){
-        setShowProp(change);
-    }
-
-    return (
-        <div className="model-overlay">
-            <button onClick={()=>{updateState(true)}}>Show Modal</button>
-
-            
-
-            {
-                showProp && 
-                <div className="model-close">
-                    <button onClick={()=>{updateState(false)}}>Close</button>
-                    <p>This is content of the modal.</p>
-                    </div>
-            }
-
-        </div>
-    )
+   return (
+      <div className="modal-overlay" onClick={onClose}>
+         <div className="modal">
+            <button className="modal-close" onClick={onClose}>
+               Close
+            </button>
+            {children}
+         </div>
+      </div>
+   );
 }
 
-export default Modal
+export default Modal;

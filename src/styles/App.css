@@ -8,6 +8,10 @@
     margin:1em;
 }
 
+.showBtn{
+    z-index: 9999;
+}
+
 .model-close{
     margin-inline: 1em;
 }
